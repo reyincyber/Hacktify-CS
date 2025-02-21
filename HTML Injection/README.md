@@ -11,7 +11,7 @@ This repository contains a series of practical labs demonstrating various HTML I
 6. [Sub-lab-2.6: Encode IT!](#sub-lab-26-encode-it)
 7. [Using a Terminal or Burp Suite/OWASP ZAP](#using-a-terminal-or-burp-suiteowasp-zap)
 8. [Remediation and Best Practices](#remediation-and-best-practices)
-9. [References](#References)
+9. [References](#references)
 
 ---
 ## Sub-lab Goals
@@ -216,25 +216,37 @@ curl "https://labs.hacktify.in/HTML/html_lab/lab_6/html_injection_6.php?search=%
 ---
 
 ## Remediation and Best Practices
-- **Input Validation:** Always sanitize and validate user inputs on both client and server sides.
-- **Output Encoding:** Use functions such as `htmlspecialchars()` in PHP to safely render user inputs.
-- **Content Security Policy (CSP):** Implement CSP headers to mitigate the impact of potential injections.
-- **Regular Audits:** Continuously perform security assessments and update code practices according to the latest security guidelines.
+To prevent HTML Injection, developers should implement strong input validation and output encoding.
+
+*Regular Audits:* Continuously perform security assessments and update code practices according to the latest security guidelines.
+
+*Output Encoding:* Use functions such as `htmlspecialchars()` in PHP to safely render user inputs.
+
+*Input Validation/whitelisting allowed inputs:* Always sanitize and validate user inputs on both client and server sides.
+  ```
+    $input = htmlspecialchars($_POST['user_input'], ENT_QUOTES, 'UTF-8');
+  ```
+
+*Escape Output Properly:*
+  ```
+echo htmlentities($user_input, ENT_QUOTES, 'UTF-8');
+  ```
+
+*Content Security Policy (CSP):* Implement CSP headers to mitigate the impact of potential injections.
+  ```
+header("Content-Security-Policy: default-src 'self'; script-src 'self'");
+  ```
 
 ---
 
 ## References
+
 - [OWASP HTML Injection Information](https://owasp.org/www-community/Injection_Information)
 - [OWASP XSS Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)
 - [PortSwigger Web Security Academy](https://portswigger.net/web-security)
-
 ---
 
 ## License
-
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
-
 *For any questions or contributions, please open an issue or submit a pull request.*
-```
