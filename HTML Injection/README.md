@@ -1,6 +1,9 @@
 # HTML Injection Labs – Technical Walkthrough
 
 This repository contains a series of practical labs demonstrating various HTML Injection vulnerabilities. 
+🔗 Documentation:
+[**GitHub**](https://github.com/reyincyber/Hacktify-CS); [**Medium**](https://cyberrey.medium.com/html-injection-labs-walkthrough-hacktify-internship-8406228e9fd2); [**Youtube**]()
+
 ## Table of Contents
 
 1. [Sub-lab-1: HTML’s are easy!](#sub-lab-1-htmls-are-easy)
