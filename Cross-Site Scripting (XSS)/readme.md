@@ -4,6 +4,9 @@
 
 Cross‑Site Scripting (XSS) remains one of the most pervasive and dangerous vulnerabilities affecting modern web applications. In this article, I share my experiences from Week 1 of my penetration testing internship, where I explored multiple XSS attack vectors in controlled lab environments. You’ll learn what XSS is, the different types attackers use, and get a detailed walkthrough of various XSS labs — including the code, technical insights, and best practices to defend against these attacks.
 
+🔗 Documentation:
+[**GitHub**](https://github.com/reyincyber/Hacktify-CS); [**Medium**](https://cyberrey.medium.com/cross-site-scripting-xss-hands-on-lab-9f07bb8c8de2); [**Youtube**]()
+
 ## Table of Contents
 - [Cross-Site Scripting (XSS) Labs Walkthrough](#cross-site-scripting-xss-labs-walkthrough)
 - [What is Cross-Site Scripting (XSS)?](#what-is-cross-site-scripting-xss)
