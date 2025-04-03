@@ -3,7 +3,7 @@
 This repository contains a series of practical labs demonstrating various HTML Injection vulnerabilities. 
 
 🔗 Documentation:
-[**GitHub**](https://github.com/reyincyber/Hacktify-CS); [**Medium**](https://cyberrey.medium.com/html-injection-labs-walkthrough-hacktify-internship-8406228e9fd2); [**Youtube**]()
+[**GitHub**](https://github.com/reyincyber/Hacktify-CS); [**Medium**](https://cyberrey.medium.com/html-injection-labs-walkthrough-hacktify-internship-8406228e9fd2); [**Youtube**](https://youtu.be/GBzzOPzwKU4)
 
 ## Table of Contents
 
