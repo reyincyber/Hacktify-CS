@@ -174,24 +174,11 @@ https://labs.hacktify.in/HTML/html_lab/lab_6/html_injection_6.php
 - **Impact:** Attackers can inject encoded HTML or JavaScript that executes in the user's browser context.
 
 ### How It Was Discovered
-- **Testing the Search Field:**
-  - Entered encoded payload:
-    ```
-    %3Cscript%3Ealert%28%27XSS%27%29%3B%3C%2Fscript%3E
-    ```
-    which decodes to:
-    ```html
-    <script>alert('XSS');</script>
-    ```
-  - Also tested:
-    ```
-    %3Cscript%3Ealert(document.cookie)%3C/script%3E
-    ```
-    which decodes to:
-    ```html
-    <script>alert(document.cookie)</script>
-    ```    
-- Both payloads resulted in the execution of the injected scripts, demonstrating improper input handling.
+Injecting a plain HTML payload into the search field did not execute the payload, thus I used a URL Percent encoder to encode the following:
+``` <script>alert('XSS');</script> ``` becomes ``` %3Cscript%3Ealert%28%27XSS%27%29%3B%3C%2Fscript%3E```
+while 
+``` <script>alert(document.cookie)</script> ``` becomes ```%3Cscript%3Ealert(document.cookie)%3C/script%3E ```
+The script executed upon rendering the encoded payload, highlighting the risks of improper input handling and encoding.
 
 ---
 
