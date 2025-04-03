@@ -18,7 +18,7 @@ Welcome to the Hacktify Cybersecurity (HCS) - Penetration Testing Internship 202
 ---
 
 ## HTML Injection
-[Repository Link](https://github.com/reyincyber/Hacktify-CS/tree/main/HTML%20Injection) | [Writeup](https://cyberrey.medium.com/html-injection-labs-walkthrough-hacktify-internship-8406228e9fd2)
+[Repository Link](https://github.com/reyincyber/Hacktify-CS/tree/main/HTML%20Injection) | [Writeup](https://cyberrey.medium.com/html-injection-labs-walkthrough-hacktify-internship-8406228e9fd2) | [YouTube](https://youtu.be/GBzzOPzwKU4)
 
 HTML Injection occurs when user input is not properly sanitized, allowing attackers to inject malicious HTML into web pages. This can lead to unauthorized modifications of page content, phishing attacks, and user impersonation.
 
