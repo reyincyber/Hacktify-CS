@@ -56,23 +56,16 @@ In Week 1, I conducted a series of XSS labs designed to test different injection
 ### Sub-Lab 1: Let's Do IT!
 By analyzing the form’s input handling and testing with a simple script injection, it was observed that the application executed the injected script, indicating an XSS vulnerability. The form accepts user input through the email field and submits it to lab_1.php using the GET method. If lab_1.php processes this input without proper validation or sanitization, it becomes vulnerable to XSS attacks.
 ```html
-<script>alert('XSS: Let\'s Do IT!')</script>
-```
-
-### Sub-Lab 2: Balancing is Important in Life!
-I entered the payload in the email subscription field.
-
-```html
->Hacked!<script>alert('Hacked:)</script>
-```
-
-The response displayed: “You’ll receive email on <script>alert(‘XSS’)</script>.” The script tags were not executed, indicating partial sanitization. I then inputted the second payload.
-
-```html
 <script>alert('XSS')</script>
 ```
 
-The application executed the script, displaying an alert with the message “Hacked:).” This suggests that the application fails to properly handle input containing both quotation marks and script tags, leading to successful script execution.
+### Sub-Lab 2: Balancing is Important in Life!
+I entered the payload in the email subscription field ``` <script>alert('Hacked')</script> ``` but the response displayed: ``` "You'll receive email on <script>alert('Hacked')</script> ``` . The script tags were not executed, indicating partial sanitization. 
+I then inputted the second payload 
+```
+">Hacked!<script>alert('Hacked')</script> 
+```
+The application executed the script, displaying an alert with the message "Hacked". This suggests that the application fails to properly handle input containing both quotation marks and script tags, leading to successful script execution.
 
 ### Sub-Lab 3: XSS is Everywhere!
 During testing, I entered a standard string (test) in the email input field and submitted the form. The application responded with “Please Enter Valid Email address,” indicating some level of input validation. I then entered a string containing a script tag in the email input field and submitted the form.
@@ -83,28 +76,22 @@ The script executed, displaying an alert with the message “Hacked!”. This de
 
 ### Sub-Lab 4: Alternatives are Must!
 The application allows arbitrary JavaScript execution i.e it does not validate or sanitize user input in the email field before displaying it back on the webpage.
-I tested normal string (test) → Accepted without validation, showing lack of input filtering.
-```html
-<script>alert('Hacked!')</script>@test.com
+1. I tested normal string (test) → Accepted without validation, showing lack of input filtering.
+2. I then tested ``` <script>alert('Hacked!')</script>@test.com ``` which displayed as raw text, showing partial sanitization.
+3. This prompted me to use the following payload:
 ```
-Displayed as raw text, showing partial sanitization
-```html
-><script>alert('Hacked!')</script>@test.com
-```
-Script executed successfully, confirming XSS
-```html
-><script>prompt(1)</script>@test.com
+"><script>prompt(1)</script>@test.com
 ```
 A prompt box appeared, proving JavaScript execution. This allows attackers to inject malicious JavaScript payloads, leading to Reflected XSS attacks.
 
 ### Sub-Lab 5: Developer Hates Scripts!
-Goal: Identify an entry point and use a payload with an <img> tag for bonus points.
+Goal: Identify an entry point and use a payload with an ``` <img> ``` tag for bonus points.
 
 Instead of using a straightforward <script> tag, I exploited an image tag vulnerability. The onerror attribute executed the JavaScript when the image failed to load, triggering the alert.
-```html
+```
 ">hello<IMG SRC=javascript:alert(1)>@test.com"
 ```
-```html
+```
 <img src=x onerror="alert('XSS: Developer Hates Scripts!')">
 ```
 
@@ -118,15 +105,24 @@ Initially, the first payload did not trigger a popup, indicating that the applic
 ```
 
 ### Sub-Lab 7: Encoding is the Key?
-I submitted the encoded payload via the URL. The browser’s decoding led to execution of the script, verifying that encoding does not prevent XSS without proper sanitization.
-```html
-%3Cscript%3Ealert('XSS: Encoded!')%3C/script%3E
+I submitted the encoded payload via URL Encoding ([URL Encode Tool](https://www.url-encode-decode.com/), or BurpSuite Decoder). 
+
+The ``` "><script>alert('XSS: Encoded!')</script> ``` becomes 
+``` 
+%22%3E%3Cscript%3Ealert%28%27XSS%3A+Encoded%21%27%29%3C%2Fscript%3E
 ```
 
+while ``` ">hello<IMG SRC=javascript:alert(1)>@test.com" ``` becomes 
+``` 
+%22%3Ehello%3CIMG+SRC%3Djavascript%3Aalert%281%29%3E%40test.com%22
+```
+
+The browser's decoding led to execution of the script, verifying that encoding does not prevent XSS without proper sanitization.
+
 ### Sub-Lab 8: XSS with File Upload (File Name)
-Goal: Identify an entry point on the file upload page and use a payload with an <img> tag.
+Goal: Identify an entry point on the file upload page and use a payload with an ```<img> `` tag.
 By renaming an uploaded file with the payload, the unsanitized file name was displayed on the page, triggering the alert.
-```html
+```
 <img src=x onerror="alert('XSS: File Name Exploit')">
 ```
 
@@ -137,23 +133,37 @@ After uploading a file with the crafted payload in its content, the server’s r
 ```
 
 ### Sub-Lab 10: Stored Everywhere!
-I systematically injected this payload into multiple fields that persist data, and every instance produced a popup, illustrating how stored XSS can affect numerous parts of an application.
-```html
-<script>alert('XSS: Stored Everywhere!')</script>
-```
+I registered and logged in with the following payloads as credentials:
+
+First Name: ``` <script>alert('Firstname Stored')</script> ```
+
+Lastname: ``` <img src=x onerror="alert('LName Stored TOO!')"> ```
+
+Email: ``` ">hello<IMG SRC=javascript:alert(emailfieldnotsafetoo)>@test.com" ```
+
+Password:  ```12345```
+
+These were successfully stored on the server.
 
 ### Sub-Lab 11: DOM’s are Love!
-Goal: Find three entry points on the page, use three XSS payloads as specified, and confirm execution via popups.
-The analysis confirms that the web application is vulnerable to DOM-based XSS attacks through multiple entry points. DOM-based Cross-Site Scripting (DOM XSS) occurs when client-side scripts of a web application process user input without proper validation or encoding, leading to the execution
-of malicious scripts.
-```html
-https://..../lab_11.php
-https://..../lab_11.php?coin=doge
-https://..../lab_11.php?coin=btc
-https://..../lab_11.php?coin=eth
-https://..../lab_11.php?coin=doge)
-```
+**Goal**: Find three entry points on the page, use three XSS payloads as specified, and confirm execution via popups.
+
 In this lab, the provided dom.js script contains several potential vulnerabilities due to improper handling of user inputs. Similarly, by manipulating the redir and coin parameters, an attacker can execute arbitrary scripts due to the improper handling of these parameters in the dom.js script.
+
+```
+https://..../lab_11.php
+
+https://..../lab_11.php?coin=btc
+
+https://..../lab_11.php?coin=eth
+
+https://..../lab_11.php?coin=doge
+
+https://..../lab_11.php?<img src =x onerror=confirm("COINS_HACKED!")>
+```
+
+The analysis confirms that the web application is vulnerable to DOM-based XSS attacks through multiple entry points. DOM-based Cross-Site Scripting (DOM XSS) occurs when client-side scripts of a web application process user input without proper validation or encoding, leading to the execution
+of malicious scripts. By addressing these vulnerabilities through proper input validation, sanitization, and avoiding unsafe JavaScript functions, the application can mitigate the risk of DOM-based XSS attacks.
 
 ---
 ## Best Practices for Mitigating XSS:
