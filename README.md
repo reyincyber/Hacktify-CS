@@ -66,4 +66,4 @@ Contributions are welcome! If you have improvements, additional resources, or co
 This repository is maintained for educational purposes. Ensure responsible use of the information provided.
 
 ## Contact
-For inquiries or discussions, feel free to reach out via [**LinkedIn**](https://linkedin.com/in/cyberrey) [**GitHub**](https://github.com/reyincyber/) or follow my writeups on [**Medium**](https://medium.com/@cyberrey), [**Youtube**](https://www.youtube.com/@reyincyber).
+For inquiries or discussions, feel free to reach out via [**LinkedIn**](https://linkedin.com/in/cyberrey)  | [**GitHub**](https://github.com/reyincyber/) | [**Medium**](https://medium.com/@cyberrey) | [**YouTube**](https://www.youtube.com/@reyincyber).
