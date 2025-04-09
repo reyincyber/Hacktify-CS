@@ -89,46 +89,44 @@ This behavior indicates that the application does not properly sanitize user inp
 
 ### Errors and POST!
 
-The SQLi vulnerability was found in POST parameters, allowing injection in form submissions.
-
-- Intercepted form submission request using Burp Suite.
-- Modified POST request to include `' OR '1'='1 ` in parameters.
-- Received unauthorized admin access.
-
-The application granted access without proper credentials, indicating that user inputs were directly embedded into SQL queries without adequate sanitization or parameterization.
+The SQLi vulnerability was found in POST parameters by modifying POST request to include `' OR '1'='1 ` in parameters. The application granted access without proper credentials, indicating that user inputs were directly embedded into SQL queries without adequate sanitization or parameterization.
 
 ### User Agents Lead Us!
 
 SQL Injection was exploitable in the User-Agent HTTP header, which was logged in the database.
 
 - Log in with the credentials `admin@gmail.com ` and `admin123 `, the application displayed the User-Agent string.
-- By injecting a single quote (') into the User-Agent header (or changing ``` User-Agent to Mozilla/5.0' OR '1'='1 ```) and observing an SQL error message, it was evident that the input was not properly sanitized, confirming the SQL Injection vulnerability.
+- By injecting a single quote (') into the User-Agent header or changing
+
+ ``` User-Agent to Mozilla/5.0' OR '1'='1 ``` 
+
+ or 
+
+``` User-Agent to Mozilla/5.0 " OR "1"="1 ```
+
+  Based on the  observed an SQL error message, it was evident that the input was not properly sanitized, confirming the SQL Injection vulnerability.
 
 ### Referer Lead Us!
 
 The application processed Referer headers in SQL queries without validation.
-
 - I used browser developer tools to inspect network requests and identify the Referer header as a potential injection point.
-- Employed Burp Suite to intercept HTTP requests and modify the Referrer header with SQL injection payloads ` ' OR 1=1-- `.
-- Observed application responses for SQL errors or unexpected behavior indicative of successful injection.Oh Cookies!
+- I also employed Burp Suite to intercept HTTP requests and modify the **_Referrer_ header** with SQL injection payloads ` ' OR 1=1-- ` or ` " OR "1"="1 `.
+- I then observed application responses for SQL errors or unexpected behavior indicative of successful injection.
 
 ## Oh Cookies!
 
 SQLi was possible via session cookies, leading to session hijacking.
 
 - I logged in using credentials ‘admin’ for both username and password.
-
-- I then observed the ‘username’ cookie set upon successful login.
-
-- Using browser’s developer tools, modify the ‘username’ cookie to include a SQL injection payload: `' UNION SELECT version(),user,database()#`
-
+- Using browser’s developer tools, I navigated to the "Storage" tab and the "Cookies" sub tab where I click on the webpage link
+- I then modified the ‘username’ cookie to include a SQL injection payload: `' union SELECT version(),user(),database()# `
 - Upon refreshing the page, the application displayed database version, current user, and database name, confirming successful SQL injection.
 
 ## WAF’s are Injected!
 
 SQL Injection was possible despite Web Application Firewall (WAF), using obfuscation techniques.
 
-During testing, the following payload was appended to the URL ` ?id=1&id=0' +union+select+1,@@version,database() -- + `
+During testing, the following payload was appended to the URL ` ?id=1&id=0' +union+select+1,@@version,database()--+ `
 
 This payload exploits the SQL Injection vulnerability by injecting a UNION SELECT statement to retrieve the database version and name. This indicates that the application executed the injected SQL command and returned sensitive database information.
 
@@ -138,7 +136,7 @@ he application is vulnerable to SQL Injection attacks, allowing attackers to exe
 
 ` ?id=1-- ` 
 
-` ?id=1&param=UNI&param2=ON SEL&param3=ECT 1,2,3 -- `
+` ?id=1&param=UNI&param2=ON SEL&param3=ECT 1,2,3-- `
 
 The application responded with login credentials
 
