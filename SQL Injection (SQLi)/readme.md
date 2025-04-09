@@ -102,7 +102,7 @@ The application granted access without proper credentials, indicating that user 
 SQL Injection was exploitable in the User-Agent HTTP header, which was logged in the database.
 
 - Log in with the credentials `admin@gmail.com ` and `admin123 `, the application displayed the User-Agent string.
-- By injecting a single quote (') into the User-Agent header (or changing ``` User-Agent to Mozilla/5.0 OR 1`=`1\` ```) and observing an SQL error message, it was evident that the input was not properly sanitized, confirming the SQL Injection vulnerability.
+- By injecting a single quote (') into the User-Agent header (or changing ``` User-Agent to Mozilla/5.0' OR '1'='1 ```) and observing an SQL error message, it was evident that the input was not properly sanitized, confirming the SQL Injection vulnerability.
 
 ### Referer Lead Us!
 
