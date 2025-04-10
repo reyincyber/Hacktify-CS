@@ -10,7 +10,7 @@ Welcome to the Hacktify Cybersecurity (HCS) - Penetration Testing Internship 202
 ## HTML Injection
 [GitHub Repo](https://github.com/reyincyber/Hacktify-CS/tree/main/HTML%20Injection) | [Medium Writeup](https://cyberrey.medium.com/html-injection-labs-walkthrough-hacktify-internship-8406228e9fd2) | [YouTube](https://youtu.be/GBzzOPzwKU4)
 
-HTML Injection occurs when user input is not properly sanitized, allowing attackers to inject malicious HTML into web pages. This can lead to unauthorized modifications of page content, phishing attacks, and user impersonation.
+Despite being considered a "legacy" vulnerability, HTML Injection remains prevalent. During my labs, I exploited unsanitized input fields, demonstrating reflected and stored HTML injection scenarios. Real-world incidents, like the WooCommerce CVE-2024-9944 affecting over 7 million sites, highlighted its ongoing relevance. HTML Injection occurs when user input is not properly sanitized, allowing attackers to inject malicious HTML into web pages. This can lead to unauthorized modifications of page content, phishing attacks, and user impersonation.
 ```
 Sub-lab 1: HTML’s are easy!
 <h1>Test</h1>
@@ -40,7 +40,7 @@ Sub-lab-2.6: Encode IT!
 
 [GitHub Repo](https://github.com/reyincyber/Hacktify-CS/tree/main/Cross-Site%20Scripting%20(XSS)) | [Medium Writeup](https://cyberrey.medium.com/cross-site-scripting-xss-hands-on-lab-9f07bb8c8de2) | [YouTube](https://youtu.be/5bZfqFwr1mc)
 
-XSS vulnerabilities allow attackers to inject malicious scripts into web applications, which can execute in a victim's browser. This can lead to session hijacking, data theft, and website defacement.
+XSS attacks emerged as a recurring threat, allowing malicious scripts to hijack sessions, steal cookies, and deface content. I explored Reflected, Stored, DOM-based, and advanced encoding payloads. Real-world examples like XSS topping the 2024 CWE Top 25 reinforced its criticality. XSS vulnerabilities allow attackers to inject malicious scripts into web applications, which can execute in a victim's browser. This can lead to session hijacking, data theft, and website defacement.
 ```
 Let’s Do IT!
 <script>alert('XSS')</script>
@@ -90,7 +90,7 @@ https://..../lab_11.php?<img src =x onerror=confirm("COINS_HACKED!")>
 
 [GitHub Repo](https://github.com/reyincyber/Hacktify-CS/tree/main/Insecure%20Direct%20Object%20References%20(IDOR)) | [Medium Writeup](https://cyberrey.medium.com/insecure-direct-object-references-idor-hands-on-lab-93adbdd99602) | [YouTube](https://youtu.be/avhAVlpv1jc) 
 
-IDOR occurs when an application exposes internal objects (such as database records) without proper access control. Attackers can exploit this to gain unauthorized access to sensitive data.
+IDOR vulnerabilities surfaced through URL parameter manipulation, enabling unauthorized access to user data and account settings. Labs revealed scenarios where altering object references exposed sensitive information. IDOR occurs when an application exposes internal objects (such as database records) without proper access control. Attackers can exploit this to gain unauthorized access to sensitive data.
 ```
 1.1 Give me my amount!!
 https://…?id=11
@@ -108,7 +108,7 @@ https://…id=47
 
 [GitHub Repo](https://github.com/reyincyber/Hacktify-CS/tree/main/SQL%20Injection%20(SQLi)) | [Medium Writeup](https://cyberrey.medium.com/sql-injection-sqli-hands-on-lab-d049af02b623) | [YouTube](https://youtu.be/XAS5fkZiwfQ) 
 
-SQL Injection is a critical vulnerability that allows attackers to manipulate database queries by injecting malicious SQL code. This can lead to data leaks, unauthorized access, and database corruption.
+SQLi remains one of the most dangerous vulnerabilities. I demonstrated classic, error-based, blind, and even HTTP header injections. Labs showed bypassing weak WAF configurations and exploiting cookies, user-agent headers, and referrers. SQL Injection is a critical vulnerability that allows attackers to manipulate database queries by injecting malicious SQL code. This can lead to data leaks, unauthorized access, and database corruption.
 ```
 1. Strings & Errors Part 1
 1" OR "1"="1
@@ -160,7 +160,7 @@ Log in with 'admin'
 
 [GitHub Repo](https://github.com/reyincyber/Hacktify-CS/tree/main/Cross-Site%20Request%20Forgery%20(CSRF)) | [Medium Writeup](https://cyberrey.medium.com/cross-site-request-forgery-csrf-hands-on-lab-34346497f6bf) | [YouTube](https://youtu.be/P6YhvQkkSpY) 
 
-CSRF attacks trick authenticated users into executing unwanted actions on a web application, often leading to account takeover, unauthorized transactions, or configuration changes.
+CSRF exploits trust in authenticated sessions, allowing attackers to perform actions without user consent. Labs covered weak or missing token validation, improper session handling, and exploitation via XSS. CSRF attacks trick authenticated users into executing unwanted actions on a web application, often leading to account takeover, unauthorized transactions, or configuration changes.
 ```
 5. XSS the saviour
 <script>alert(document.cookie)</script>
@@ -170,13 +170,13 @@ CSRF attacks trick authenticated users into executing unwanted actions on a web 
 
 [GitHub Repo](https://github.com/reyincyber/Hacktify-CS/tree/main/Cross-Origin%20Resource%20Sharing%20(CORS)) | [Medium Writeup](https://medium.com/@cyberrey/cross-origin-resource-sharing-cors-hands-on-lab-6a1d0b1b4d64) | [YouTube](https://youtu.be/n1NhWGDGzHw) 
 
-CORS misconfigurations can allow unauthorized cross-origin requests, leading to data exposure and security risks for web applications that fail to enforce strict access control policies.
+CORS misconfigurations can lead to unauthorized cross-origin data access. Labs illustrated dangers of wildcard policies, prefix/suffix matching, and trusting null or arbitrary origins. CORS misconfigurations can allow unauthorized cross-origin requests, leading to data exposure and security risks for web applications that fail to enforce strict access control policies.
 
 ## Hacktify WK4 CTF
 [GitHub Repo](https://github.com/reyincyber/Hacktify-CS/tree/8008ec0d8b2af76a3713b1448ccea066a1ec8894/Hacktify%20WK4%20CTF) | [Medium Writeup](https://medium.com/@cyberrey/hacktify-ctf-2025-week-4-eed64269651d)
 
 This section contains the Hacktify Week 4 Capture The Flag (CTF) challenges and solutions, helping participants develop cybersecurity skills through practical problem-solving.
-
+ The CTF challenges tested my skills across web exploitation, network forensics, reverse engineering, OSINT, and cryptography. I cracked encoded messages, reversed binaries, analyzed network captures, and uncovered hidden data. 
 ## HCPT Reports
 [GitHub Repo](https://github.com/reyincyber/Hacktify-CS/blob/main/Hacktify%20HCPT%20Reports%20RU%20(1).pdf)
 
