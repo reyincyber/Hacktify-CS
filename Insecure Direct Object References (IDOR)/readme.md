@@ -7,7 +7,7 @@ Insecure Direct Object References (IDOR) continue to be one of the most critical
 In this article, I share my hands-on experience from Week 2 of my Hacktify Cybersecurity (HCS) penetration testing internship, where I explored multiple IDOR attack vectors in controlled lab environments. You’ll learn what IDOR is, the different ways attackers exploit it, and a detailed walkthrough of various IDOR labs — complete with code, technical insights, and best practices for mitigation.
 
 🔗 Documentation:
-[**GitHub**](https://github.com/reyincyber/Hacktify-CS); [**Medium**](https://cyberrey.medium.com/insecure-direct-object-references-idor-hands-on-lab-93adbdd99602); [**Youtube**]()
+[**GitHub**](https://github.com/reyincyber/Hacktify-CS); [**Medium**](https://cyberrey.medium.com/insecure-direct-object-references-idor-hands-on-lab-93adbdd99602); [**Youtube**](https://youtu.be/avhAVlpv1jc )
 
 ## Table of Contents
 
