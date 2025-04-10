@@ -31,7 +31,7 @@ Cross-Site Request Forgery (CSRF) is a malicious exploit where an attacker trick
 🔗 **Documentation:**  
 - [GitHub](https://github.com/reyincyber/Hacktify-CS)  
 - [Medium](https://cyberrey.medium.com/cross-site-request-forgery-csrf-hands-on-lab-34346497f6bf)  
-- [YouTube]()  
+- [YouTube](https://youtu.be/P6YhvQkkSpY)  
 
 ---
 
