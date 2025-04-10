@@ -6,7 +6,7 @@ SQL Injection (SQLi) remains one of the most devastating web application vulnera
 
 This article covers my hands-on experience during Week 2 of my Hacktify Cybersecurity (HCS) penetration testing internship, where I explored multiple SQLi attack vectors in controlled lab environments. You’ll learn what SQLi is, how attackers exploit it, and a detailed walkthrough of various SQLi labs, including best practices to prevent these attacks.
 
-🔗 Documentation: **[GitHub](https://github.com/reyincyber/Hacktify-CS)**; **[Medium](https://cyberrey.medium.com/sql-injection-sqli-hands-on-lab-d049af02b623)**; [**YouTube**]()
+🔗 Documentation: **[GitHub](https://github.com/reyincyber/Hacktify-CS)**; **[Medium](https://cyberrey.medium.com/sql-injection-sqli-hands-on-lab-d049af02b623)**; [**YouTube**](https://youtu.be/XAS5fkZiwfQ)
 
 ## Table of Contents
 
