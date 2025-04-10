@@ -28,22 +28,22 @@ HTML Injection occurs when user input is not properly sanitized, allowing attack
 XSS vulnerabilities allow attackers to inject malicious scripts into web applications, which can execute in a victim's browser. This can lead to session hijacking, data theft, and website defacement.
 
 ## Insecure Direct Object References (IDOR)
-[GitHub Repo](https://github.com/reyincyber/Hacktify-CS/tree/main/Insecure%20Direct%20Object%20References%20(IDOR)) | [Medium Writeup](https://cyberrey.medium.com/insecure-direct-object-references-idor-hands-on-lab-93adbdd99602) | [YouTube]() 
+[GitHub Repo](https://github.com/reyincyber/Hacktify-CS/tree/main/Insecure%20Direct%20Object%20References%20(IDOR)) | [Medium Writeup](https://cyberrey.medium.com/insecure-direct-object-references-idor-hands-on-lab-93adbdd99602) | [YouTube](https://youtu.be/avhAVlpv1jc) 
 
 IDOR occurs when an application exposes internal objects (such as database records) without proper access control. Attackers can exploit this to gain unauthorized access to sensitive data.
 
 ## SQL Injection (SQLi)
-[GitHub Repo](https://github.com/reyincyber/Hacktify-CS/tree/main/SQL%20Injection%20(SQLi)) | [Medium Writeup](https://cyberrey.medium.com/sql-injection-sqli-hands-on-lab-d049af02b623) | [YouTube]() 
+[GitHub Repo](https://github.com/reyincyber/Hacktify-CS/tree/main/SQL%20Injection%20(SQLi)) | [Medium Writeup](https://cyberrey.medium.com/sql-injection-sqli-hands-on-lab-d049af02b623) | [YouTube](https://youtu.be/XAS5fkZiwfQ) 
 
 SQL Injection is a critical vulnerability that allows attackers to manipulate database queries by injecting malicious SQL code. This can lead to data leaks, unauthorized access, and database corruption.
 
 ## Cross-Site Request Forgery (CSRF)
-[GitHub Repo](https://github.com/reyincyber/Hacktify-CS/tree/main/Cross-Site%20Request%20Forgery%20(CSRF)) | [Medium Writeup](https://cyberrey.medium.com/cross-site-request-forgery-csrf-hands-on-lab-34346497f6bf) | [YouTube]() 
+[GitHub Repo](https://github.com/reyincyber/Hacktify-CS/tree/main/Cross-Site%20Request%20Forgery%20(CSRF)) | [Medium Writeup](https://cyberrey.medium.com/cross-site-request-forgery-csrf-hands-on-lab-34346497f6bf) | [YouTube](https://youtu.be/P6YhvQkkSpY) 
 
 CSRF attacks trick authenticated users into executing unwanted actions on a web application, often leading to account takeover, unauthorized transactions, or configuration changes.
 
 ## Cross-Origin Resource Sharing (CORS)
-[GitHub Repo](https://github.com/reyincyber/Hacktify-CS/tree/main/Cross-Origin%20Resource%20Sharing%20(CORS)) | [Medium Writeup](https://medium.com/@cyberrey/cross-origin-resource-sharing-cors-hands-on-lab-6a1d0b1b4d64) | [YouTube]() 
+[GitHub Repo](https://github.com/reyincyber/Hacktify-CS/tree/main/Cross-Origin%20Resource%20Sharing%20(CORS)) | [Medium Writeup](https://medium.com/@cyberrey/cross-origin-resource-sharing-cors-hands-on-lab-6a1d0b1b4d64) | [YouTube](https://youtu.be/n1NhWGDGzHw) 
 
 CORS misconfigurations can allow unauthorized cross-origin requests, leading to data exposure and security risks for web applications that fail to enforce strict access control policies.
 
