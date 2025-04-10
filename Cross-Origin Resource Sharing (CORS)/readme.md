@@ -4,7 +4,7 @@
 
 Imagine you’re at a bustling café, connecting to the public Wi-Fi to check your bank account. Unbeknownst to you, a malicious script running on an innocuous-looking website you’ve just visited is silently attempting to access your banking information. This scenario underscores the potential dangers of Cross-Origin Resource Sharing (CORS) misconfigurations — a subtle yet critical vulnerability in web security that can expose sensitive data to unauthorized parties.  
 
-🔗 **Documentation:** [**GitHub**](https://github.com/reyincyber/Hacktify-CS); [**Medium**](https://cyberrey.medium.com/cross-site-request-forgery-csrf-hands-on-lab-34346497f6bf); [**YouTube**]()  
+🔗 **Documentation:** [**GitHub**](https://github.com/reyincyber/Hacktify-CS); [**Medium**](https://medium.com/@cyberrey/cross-origin-resource-sharing-cors-hands-on-lab-6a1d0b1b4d64); [**YouTube**](https://youtu.be/n1NhWGDGzHw)  
 
 ---
 
