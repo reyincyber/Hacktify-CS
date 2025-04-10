@@ -5,16 +5,6 @@ Welcome to the Hacktify Cybersecurity (HCS) - Penetration Testing Internship 202
 
 🔗 Documentation: [**GitHub**](https://github.com/reyincyber/Hacktify-CS); [**Medium**](https://medium.com/me/stories/public); [**YouTube**](https://www.youtube.com/watch?v=GBzzOPzwKU4&list=PLlC9xarFXu2uGxKL1Xr7hy3TH13YOVY8U)
 
-## Table of Contents
-- [HTML Injection](#html-injection)
-- [Cross-Site Scripting (XSS)](#cross-site-scripting-xss)
-- [Insecure Direct Object References (IDOR)](#insecure-direct-object-references-idor)
-- [SQL Injection (SQLi)](#sql-injection-sqli)
-- [Cross-Site Request Forgery (CSRF)](#cross-site-request-forgery-csrf)
-- [Cross-Origin Resource Sharing (CORS)](#cross-origin-resource-sharing-cors)
-- [Hacktify WK4 CTF](#hacktify-wk4-ctf)
-- [HCPT Reports](#hcpt-reports)
-
 ---
 
 ## HTML Injection
